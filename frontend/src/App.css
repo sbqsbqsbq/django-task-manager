@@ -141,3 +141,10 @@
   border: 1px solid #ccc;
   border-radius: 5px;
 }
+
+.task-done {
+  background-color: #d3d3d3;
+  button {
+    background-color: #d3d3d3;
+  }
+}

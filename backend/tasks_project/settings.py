@@ -27,18 +27,21 @@ DEBUG = True
 
 ALLOWED_HOSTS = []
 
-
-# Application definition
+CORS_ALLOW_ALL_ORIGINS = True  # 모든 출처 허용
+CORS_ALLOWED_ORIGINS = [
+    "http://localhost:3000",  # 프론트엔드 포트 번호
+]
 
 INSTALLED_APPS = [
     'django.contrib.admin',
-    'django.contrib.auth',
+    'django.contrib.auth', 
     'django.contrib.contenttypes',
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'rest_framework',  # DRF
-    'tasks',  # 태스크 목록 앱
+    'rest_framework',  # DRF 앱 추가
+    'corsheaders',  # CORS 앱 추가
+    'tasks',  # tasks 앱 추가
 ]
 
 MIDDLEWARE = [
@@ -49,6 +52,7 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    'corsheaders.middleware.CorsMiddleware',  # CORS 미들웨어 추가
 ]
 
 ROOT_URLCONF = 'tasks_project.urls'
