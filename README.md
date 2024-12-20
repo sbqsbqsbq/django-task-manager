@@ -26,6 +26,13 @@ frontend/
 
 ## 프로젝트 실행 방법
 ### Backend 실행 방법
+- 마이그레이션
+```bash
+cd backend
+python manage.py makemigrations
+python manage.py migrate
+```
+- 서버 실행
 ```bash
 cd backend
 python manage.py runserver
