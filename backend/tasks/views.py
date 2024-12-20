@@ -7,7 +7,7 @@ from .serializer import TaskSerializer
 
 
 # 태스크 관리 뷰
-@api_view(['GET', 'POST', 'PUT', 'DELETE'])
+@api_view(['GET', 'POST'])
 def task_view(request, pk=None):
     # GET 요청 처리 - 모든 태스크 조회
     if request.method == 'GET':
